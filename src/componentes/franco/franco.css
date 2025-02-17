@@ -1,0 +1,17 @@
+.franco_1{
+    font-size: 6rem;
+    color: rgba(39, 233, 142, 0.986);
+}
+
+.franco_2{
+ color: rgb(235, 235, 100);
+}
+
+.franco_3, .franco_4{
+    color: rgb(174, 133, 221)
+}
+
+.franco_5{
+    background-color: rgba(39, 233, 142, 0.986);
+    border-radius: .2em;
+}

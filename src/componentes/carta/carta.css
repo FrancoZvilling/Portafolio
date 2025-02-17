@@ -1,0 +1,12 @@
+.card{
+    width: 18em;
+    background-color: rgb(144, 93, 202);
+}
+
+.card_title{
+    color: rgba(39, 233, 142, 0.986);
+}
+
+.card_text{
+    color: rgb(5, 4, 97);
+}

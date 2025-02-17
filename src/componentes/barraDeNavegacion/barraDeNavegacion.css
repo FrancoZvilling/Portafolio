@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(5, 4, 97);
+    font-family: "Play", serif;
+    scroll-behavior: smooth;
+}
+
+
+.contenedor_barra{
+    width: 250px;
+    background-color: rgb(8, 6, 124) ;
+}
+
+.list-unstyled {
+    font-weight: 900;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.list-unstyled li {
+    padding: .5em;
+}
+
+.list-group-item{
+    color: rgb(144, 93, 202);
+}
+
+.img_barra{
+    width: 200px;
+    padding-bottom: 3em;
+}
+
+
+

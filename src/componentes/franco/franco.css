@@ -1,17 +1,49 @@
+.container-franco {
+    display: flex;
+    align-items: center;
+    margin-left: 300px;
+    padding: 20px;
+    min-height: 100vh; 
+}
+
 .franco_1{
     font-size: 6rem;
     color: rgba(39, 233, 142, 0.986);
 }
 
 .franco_2{
- color: rgb(235, 235, 100);
+    font-size: 2rem;
+    color: rgb(235, 235, 100);
 }
 
-.franco_3, .franco_4{
-    color: rgb(174, 133, 221)
+.franco_3{
+    color: rgb(174, 133, 221);
 }
 
-.franco_5{
-    background-color: rgba(39, 233, 142, 0.986);
+.franco_4{
+    color: rgba(39, 233, 142, 0.986);
+}
+
+.franco_4 a{
+    color: rgba(39, 233, 142, 0.986);
+    margin-left: 6px;
+}
+
+.franco_5 a{
+    all: unset;
+}
+
+.franco_5 button{
+    all: unset;
+    cursor: pointer;
+    background-color:rgb(174, 133, 221);
     border-radius: .2em;
+    padding: .2em .5em;
+    margin-top: 1.5em;
 }
+
+.franco_5 button:hover{
+    background-color: rgba(39, 233, 142, 0.986);
+}
+
+

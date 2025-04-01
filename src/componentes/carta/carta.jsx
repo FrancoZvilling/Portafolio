@@ -7,12 +7,12 @@ function Carta({img, titulo, descripcion}) {
   return (
     <Card >
       <Card.Img variant="top" src={img}  />
-      <Card.Body>
+      <Card.Body className='card_body'>
         <Card.Title className='card_title'>{titulo}</Card.Title>
         <Card.Text className='card_text'>
           {descripcion}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <a href="https://libreriaonlinezwilling.web.app/"><Button>Ir al proyecto</Button></a>
       </Card.Body>
     </Card>
   );

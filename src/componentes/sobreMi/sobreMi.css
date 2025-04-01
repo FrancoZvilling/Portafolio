@@ -1,3 +1,11 @@
+.container-sobre_mi {
+    display: flex;
+    align-items: center;
+    margin-left: 300px;
+    padding: 20px;
+    min-height: 100vh; 
+}
+
 .sobre_mi_1{
     font-size: 6rem;
     color: rgba(39, 233, 142, 0.986);
@@ -13,6 +21,11 @@
 
 .sobre_mi_4{
     color: rgb(174, 133, 221);
+}
+
+.sobre_mi_4 a{
+    color: rgba(39, 233, 142, 0.986);
+    margin-left: 6px;
 }
 
 .sobre_mi_5{

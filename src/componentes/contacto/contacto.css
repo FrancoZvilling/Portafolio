@@ -1,0 +1,35 @@
+.container-contacto{
+    display: flex;
+    align-items: center;
+    margin-left: 300px;
+    min-height: 100vh; 
+    padding: 20px;
+}
+
+.contacto_1{
+    font-size: 6rem;
+    color: rgba(39, 233, 142, 0.986);
+}
+.link{
+    text-decoration: none;
+    color:rgba(39, 233, 142, 0.986) ;
+}
+.link:hover{
+    text-decoration: none;
+    color: rgb(174, 133, 221);
+}
+.titulo{
+    color: rgba(204, 233, 39, 0.986);
+}
+.titulo2{
+    color: rgba(18, 207, 33, 0.986);
+}
+.icon-email{
+    color: rgba(204, 233, 39, 0.986);
+}
+.email{
+    color: rgba(39, 233, 142, 0.986) ;
+}
+.icon-whatsapp{
+    color: rgba(18, 207, 33, 0.986);
+}

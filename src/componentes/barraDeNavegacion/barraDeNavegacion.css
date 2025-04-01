@@ -14,9 +14,20 @@ body{
     font-weight: 900;
     font-style: normal;
     font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.list-unstyled li {
+.nav{
+    all: unset;
+}
+
+.list-unstyled button:hover{
+    color: rgba(39, 233, 142, 0.986);
+}
+
+.list-unstyled button {
     padding: .5em;
 }
 
@@ -28,6 +39,5 @@ body{
     width: 200px;
     padding-bottom: 3em;
 }
-
 
 

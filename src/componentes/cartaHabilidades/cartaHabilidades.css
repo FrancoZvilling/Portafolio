@@ -1,0 +1,63 @@
+.container-cartaHabilidades {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.cartaHabilidades_titulo {
+    font-size: 2rem;
+    color: rgb(174, 133, 221)
+}
+
+.icon-html {
+    color: #e34c26;
+}
+
+.icon-css {
+    color: #264de4;
+}
+
+.icon-js {
+    color: #f7df1e;
+}
+
+.icon-bootstrap {
+    color: #7952B3
+}
+
+.icon-react {
+    color: #61DBFB;
+}
+
+.icon-git{
+    color: #F05032;
+}
+
+.icon-github{
+    color: #000000;
+}
+
+.icon-sass{
+    color: #CC6699;
+}
+
+.icon-node{
+    color: #8CC84B;
+}
+
+.cartaHabiliades_iconos {
+    display: flex;
+    gap: 15px;
+}
+
+.icono-con-nombre {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nombre-icono {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(39, 233, 142, 0.986)
+}

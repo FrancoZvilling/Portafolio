@@ -8,5 +8,17 @@
 }
 
 .card_text{
-    color: rgb(5, 4, 97);
+    color: rgb(235, 235, 100);
+    text-align: center;
+}
+
+.card_body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card_body button{
+    background-color:  rgb(8, 6, 124);
+    border: none;
 }

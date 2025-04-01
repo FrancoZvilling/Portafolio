@@ -1,0 +1,24 @@
+.container-cartaEstudios{
+    display: flex;
+    align-items: center;
+}
+
+.cartaEstudios_1{
+    font-size: 2rem;
+    color: rgb(174, 133, 221);
+    
+}
+
+.botonEstudios{
+    all: unset;
+    background-color: rgba(39, 233, 142, 0.986);
+    padding: 0.5em 1em;
+    border-radius: .2em;
+    margin-top: 1em;
+}
+
+.botonEstudios:hover{
+    cursor: pointer;
+    background-color: rgb(235, 235, 100);
+
+}

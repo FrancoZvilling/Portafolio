@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./barraDeNavegacion.css";
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -15,10 +16,12 @@ function BarraDeNavegacion() {
                         </div>
                         <div className="col-12 ">
                             <ul className="list-unstyled">
-                                <li className="list-group-item my-2 text-center">FRANCO ZVILLING</li>
-                                <li className="list-group-item my-2 text-center">SOBRE MI</li>
-                                <li className="list-group-item my-2 text-center">MIS TRABAJOS</li>
-                                <li className="list-group-item my-2 text-center">HABILIDADES</li>
+                                <NavLink className="nav" to="/"><button className="list-group-item my-2 text-center">FRANCO ZVILLING</button></NavLink>
+                                <NavLink className="nav" to="/sobremi"><button className="list-group-item my-2 text-center">SOBRE MI</button></NavLink>
+                                <NavLink className="nav" to="/mistrabajos"><button className="list-group-item my-2 text-center">MIS TRABAJOS</button></NavLink>
+                                <NavLink className="nav" to="/educacion"><button className="list-group-item my-2 text-center">EDUCACIÓN</button></NavLink>
+                                <NavLink className="nav" to="/habilidades"><button className="list-group-item my-2 text-center">HABILIDADES</button></NavLink>
+                                <NavLink className="nav" to="/contacto"><button className="list-group-item my-2 text-center">CONTACTO</button></NavLink>
                             </ul>
                         </div>
                     </div>

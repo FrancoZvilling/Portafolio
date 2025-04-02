@@ -10,7 +10,7 @@ function MisTrabajos() {
             <div className="container-mis_trabajos">
                 <div className="row">
                     <div className="mis_trabajos_1 col-12 d-flex align-items-center">MIS TRABAJOS</div>
-                    <Carta img="https://i.postimg.cc/j2crHSk5/libreria-img.png" titulo="Libreria Electronica" descripcion="Esta es mi libreria creada a apartir de react js css javascrpt y html" />
+                    <Carta img="https://i.postimg.cc/j2crHSk5/libreria-img.png" titulo="Ecommerce - Librería" descripcion="Esta es mi librería creada a partir de React.js, CSS, JavaScript y HTML." />
                 </div>
             </div>
             

@@ -21,7 +21,7 @@ function habilidades () {
     const iconos3 = [
         { componente: FaGitSquare, clase: "icon-git", nombre: "Git" },
         { componente: FaGithub , clase: "icon-github", nombre: "Github" },
-        { componente: FaNodeJs , clase: "icon-node", nombre: "Node.Js" },
+        { componente: FaNodeJs , clase: "icon-node", nombre: "Node.js" },
         { componente: FaSass , clase: "icon-sass", nombre: "Sass" },
       ];
 
@@ -30,7 +30,7 @@ function habilidades () {
             <div className="row">
                 <div className="habilidades_1 col-12 d-flex align-items-center">HABILIDADES</div>
                 <CartaHabilidades titulo={"LENGUAJES"} iconos={iconos}/>
-                <CartaHabilidades titulo={"LIBRERIAS"} iconos={iconos2}/>
+                <CartaHabilidades titulo={"LIBRERÍAS"} iconos={iconos2}/>
                 <CartaHabilidades titulo={"HERRAMIENTAS"} iconos={iconos3}/>
             </div>
         </div>

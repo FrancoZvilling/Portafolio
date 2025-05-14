@@ -1,43 +1,125 @@
-body{
-    background-color: rgb(5, 4, 97);
-    font-family: "Play", serif;
-    scroll-behavior: smooth;
+.sidebar-toggle-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1051;
+  background-color: var(--color-primary-accent);
+  color: var(--color-text-button-on-accent);
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  line-height: 1;
 }
 
-
-.contenedor_barra{
-    width: 250px;
-    background-color: rgb(8, 6, 124) ;
+.sidebar-toggle-btn:hover {
+  background-color: var(--color-tertiary-accent);
+  color: var(--color-background-dark);
 }
 
-.list-unstyled {
-    font-weight: 900;
-    font-style: normal;
-    font-size: 13px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Contenedor principal de la sidebar */
+.sidebar-nav-menu {
+  width: var(--sidebar-width-mobile);
+  background-color: var(--color-background-medium);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1050;
+  overflow-y: auto; /* Para scroll si el contenido es muy largo */
+  
+  /* Estas propiedades centrarán el .sidebar-internal-content */
+  display: flex;
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  padding: 20px 0; /* Padding vertical para evitar que el contenido toque los bordes si es muy alto */
+  position: fixed; /* Aseguramos que siga siendo fixed */
+  top: 0;
+  left: 0;
+  height: 100vh; /* Ocupa toda la altura */
 }
 
-.nav{
-    all: unset;
+.sidebar-nav-menu.open {
+  transform: translateX(0);
 }
 
-.list-unstyled button:hover{
-    color: rgba(39, 233, 142, 0.986);
+/* Contenido interno de la sidebar */
+.sidebar-internal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente el logo y la lista */
+  width: 90%; /* Un poco de espacio a los lados dentro de la sidebar */
+  max-width: 220px; /* Un ancho máximo para el contenido interno */
 }
 
-.list-unstyled button {
-    padding: .5em;
+@media (min-width: 768px) {
+  .sidebar-toggle-btn {
+    display: none !important;
+  }
+  .sidebar-nav-menu {
+    transform: translateX(0);
+    width: var(--sidebar-width-desktop);
+    /* Las propiedades de centrado (display:flex, align-items, justify-content) se heredan o aplican igual */
+    padding: 2rem 0; /* Ajuste de padding para desktop */
+  }
+  .sidebar-internal-content {
+    width: 100%; /* En desktop puede usar más ancho interno si se desea */
+    max-width: 240px; /* O un valor acorde al sidebar-width-desktop */
+  }
 }
 
-.list-group-item{
-    color: rgb(144, 93, 202);
+.sidebar-header {
+  margin-bottom: 1.5em; /* Espacio entre logo y lista, ajusta según gusto */
+  /* text-center y w-100 vienen de Bootstrap y son útiles */
 }
 
-.img_barra{
-    width: 200px;
-    padding-bottom: 3em;
+.sidebar-logo {
+  width: 160px; /* Ajusta el tamaño del logo como prefieras */
+  max-width: 100%;
+  height: auto;
+  /* margin-bottom ya no es necesario aquí, se maneja en .sidebar-header */
 }
 
+@media (min-width: 768px) {
+  .sidebar-logo {
+    width: 180px;
+  }
+  .sidebar-header {
+    margin-bottom: 2em;
+  }
+}
 
+.nav-list {
+  padding-left: 0;
+  list-style: none;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Los items de la lista ocuparán el ancho disponible de .sidebar-internal-content */
+  width: 100%; /* La lista usa todo el ancho de .sidebar-internal-content */
+}
+
+.nav-list-item {
+  width: 100%;
+}
+
+.nav-link-custom {
+  display: block;
+  width: 100%;
+  padding: 0.8em 1em;
+  margin: 0.3em 0; /* Reducido un poco el margen vertical entre items */
+  text-align: center;
+  color: var(--color-secondary-accent);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-left 0.2s ease-in-out;
+  border-left: 3px solid transparent;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  color: var(--color-primary-accent);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--color-primary-accent);
+}

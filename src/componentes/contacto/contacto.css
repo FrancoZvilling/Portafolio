@@ -1,35 +1,89 @@
-.container-contacto{
+.contacto-section {
     display: flex;
-    align-items: center;
-    margin-left: 300px;
-    min-height: 100vh; 
-    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-.contacto_1{
-    font-size: 6rem;
-    color: rgba(39, 233, 142, 0.986);
+/* .contacto_1 usa .section-title y text-center en JSX */
+.contacto_1 {
+  margin-bottom: 2em !important; /* Más espacio antes del bloque de contacto */
 }
-.link{
-    text-decoration: none;
-    color:rgba(39, 233, 142, 0.986) ;
+
+.contact-info-wrapper {
+  /* Usa tu variable o el valor directo como se discutió previamente */
+  /* background-color: rgba(var(--color-background-medium-rgb), 0.4); */
+  background-color: rgba(8, 6, 124, 0.4); /* Valor directo como ejemplo */
+  padding: 2.5rem; /* Un poco más de padding */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra sutil */
 }
-.link:hover{
-    text-decoration: none;
-    color: rgb(174, 133, 221);
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
 }
-.titulo{
-    color: rgba(204, 233, 39, 0.986);
+.contact-item:last-child {
+  margin-bottom: 0;
 }
-.titulo2{
-    color: rgba(18, 207, 33, 0.986);
+
+.contact-icon {
+  margin-right: 20px; /* Un poco más de espacio */
+  flex-shrink: 0;
 }
-.icon-email{
-    color: rgba(204, 233, 39, 0.986);
+
+.icon-email {
+  color: var(--color-tertiary-accent);
 }
-.email{
-    color: rgba(39, 233, 142, 0.986) ;
+
+.icon-whatsapp {
+  color: #25D366;
 }
-.icon-whatsapp{
-    color: rgba(18, 207, 33, 0.986);
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-weight: bold;
+  margin-bottom: 0.35rem;
+  color: var(--color-text-on-dark-secondary);
+  font-size: 1.15rem; /* Un poco más grande */
+}
+
+.contact-link {
+  color: var(--color-primary-accent);
+  font-size: 1.05rem; /* Un poco más grande */
+  word-break: break-all;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--color-tertiary-accent);
+}
+
+@media (max-width: 767.98px) {
+  .contact-info-wrapper {
+    padding: 1.5rem;
+  }
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+    font-size: 2rem; /* Iconos un poco más grandes en móvil */
+  }
+  .contact-label {
+    font-size: 1.05rem;
+  }
+  .contact-link {
+    font-size: 1rem;
+  }
 }

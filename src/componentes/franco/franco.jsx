@@ -1,23 +1,32 @@
 import React from "react";
 import "./franco.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+// "bootstrap/dist/css/bootstrap.min.css"; // No es necesario importar Bootstrap aquí si ya está en App.js
 
-
-function Franco (){
-    return(
-        <>
-            <div className="container-franco">
-                <div className="row">
-                    <div className="franco_1 col-12 d-flex align-items-center">FRANCO ZVILLING</div>
-                    <div className="franco_2 col-12 pt-1 d-flex align-items-center">DESARROLLADOR FRONTEND</div>
-                    <div className="franco_3 col-12 py-4 d-flex align-items-center">TE DOY LA BIENVENIDA A MI PORTAFOLIO WEB</div>
-                    <div className="franco_4 col-12  d-flex align-items-center">Si querés contactarme podés escribirme a<a href="https://wa.me/3541315119"> +543541315119</a></div>
-                    <div className="franco_5 col-1"><a href="/CV-2025.pdf" download><button>Descarga mi CV</button></a></div>
-                    
+function Franco() {
+    return (
+        <section className="franco-section container-fluid"> {/* container-fluid para padding responsivo */}
+            <div className="row justify-content-center"> {/* Centrar el contenido si es más estrecho */}
+                <div className="col-lg-10 col-xl-8"> {/* Limitar ancho en pantallas grandes */}
+                    <div className="text-center text-md-start"> {/* Centrado en móvil, a la izquierda en desktop */}
+                        <h1 className="franco_1 section-title">FRANCO ZVILLING</h1>
+                        <p className="franco_2">DESARROLLADOR FRONTEND</p>
+                        <p className="franco_3 py-3">TE DOY LA BIENVENIDA A MI PORTAFOLIO WEB</p>
+                        <p className="franco_4">
+                            Si querés contactarme podés escribirme a{" "}
+                            <a href="https://wa.me/3541315119" target="_blank" rel="noopener noreferrer">
+                                +54 9 3541 315119
+                            </a>
+                        </p>
+                        <div className="mt-4">
+                            <a className="btn-cv-download" href="/CV-2025.pdf" download>
+                                Descarga mi CV
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </>
-    )
+        </section>
+    );
 }
 
-export default Franco; 
+export default Franco;

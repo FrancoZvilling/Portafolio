@@ -1,13 +1,13 @@
-.container-mis_trabajos{
+.misTrabajos-section {
     display: flex;
-    align-items: center;
-    margin-left: 300px;
-    padding: 20px;
-    min-height: 100vh; 
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding-top: 2rem; /* Espacio adicional arriba */
+    padding-bottom: 2rem; /* Espacio adicional abajo */
 }
 
-.mis_trabajos_1{
-    font-size: 6rem;
-    color: rgba(39, 233, 142, 0.986);
-    margin-bottom: 0.5em;
+/* .mis_trabajos_1 usa .section-title y text-center en JSX */
+.mis_trabajos_1 {
+   margin-bottom: 2em !important; /* Más espacio antes de las cartas */
 }

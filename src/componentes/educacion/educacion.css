@@ -1,12 +1,13 @@
-.container-educacion{
+.educacion-section {
     display: flex;
-    align-items: center;
-    margin-left: 300px;
-    min-height: 100vh; 
-    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-.educacion_1{
-    font-size: 6rem;
-    color: rgba(39, 233, 142, 0.986);
+/* .educacion_1 usa .section-title y text-center en JSX */
+.educacion_1 {
+   margin-bottom: 2em !important; /* Más espacio antes de las cartas de estudio */
 }

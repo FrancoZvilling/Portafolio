@@ -1,12 +1,21 @@
-.container-habilidades{
+.habilidades-section {
     display: flex;
-    align-items: center;
-    margin-left: 300px;
-    min-height: 100vh; 
-    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-.habilidades_1{
-    font-size: 6rem;
-    color: rgba(39, 233, 142, 0.986);
+/* .habilidades_1 usa .section-title y text-center en JSX */
+.habilidades_1 {
+   margin-bottom: 2em !important;
+}
+
+/* Los estilos específicos para CartaHabilidades están en su propio CSS */
+/* Si necesitas algún ajuste para el layout de los grupos de habilidades aquí: */
+@media (max-width: 767.98px) {
+    .habilidades-section .cartaHabilidades_titulo { /* Asegurar centrado en móvil si no lo hereda bien */
+        text-align: center;
+    }
 }

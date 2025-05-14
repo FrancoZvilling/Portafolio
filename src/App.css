@@ -1,0 +1,89 @@
+/* Define tus variables de color globales */
+:root {
+  --color-background-dark: rgb(5, 4, 97);
+  --color-background-medium: rgb(8, 6, 124);
+  --color-primary-accent: rgba(39, 233, 142, 0.986);
+  --color-secondary-accent: rgb(144, 93, 202);
+  --color-tertiary-accent: rgb(235, 235, 100);
+  
+  --color-text-on-dark-primary: white; /* Para texto principal sobre fondos oscuros */
+  --color-text-on-dark-secondary: rgb(174, 133, 221);
+  --color-text-highlight: var(--color-primary-accent);
+  --color-text-button-on-accent: var(--color-background-medium); /* Texto para botones con fondo accent */
+
+  --sidebar-width-mobile: 250px;
+  --sidebar-width-desktop: 280px;
+  --font-family-main: "Play", serif; /* Asegúrate de tener esta fuente importada */
+}
+
+body {
+  background-color: var(--color-background-dark) !important;/* Asegúrate que esta línea esté así */
+  font-family: var(--font-family-main);
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--color-text-on-dark-primary); /* El color del texto debe contrastar con el fondo oscuro */
+  line-height: 1.6;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Estilo para el contenido principal */
+.main-content {
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out, padding-left 0.3s ease-in-out; /* padding-left para móvil si la sidebar se superpone */
+  min-height: 100vh;
+  display: flex; /* Para centrar el contenido de las páginas si es corto */
+  flex-direction: column; /* Para que el contenido fluya verticalmente */
+}
+
+/* Cuando la sidebar está activa en desktop, empuja el contenido */
+@media (min-width: 768px) { /* md breakpoint de Bootstrap */
+  .main-content.sidebar-active {
+    margin-left: var(--sidebar-width-desktop);
+  }
+}
+
+/* Estilos generales para los títulos de sección */
+.section-title {
+  font-size: 3rem; /* Reducido un poco de 6rem para mejor adaptabilidad inicial */
+  color: var(--color-primary-accent);
+  margin-bottom: 1em; /* Más espacio debajo del título */
+  font-weight: 700; /* Asegurar que sea bold */
+}
+
+@media (max-width: 991.98px) { /* lg breakpoint y menores */
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 767.98px) { /* md breakpoint y menores */
+  .section-title {
+    font-size: 2.2rem;
+    text-align: center; /* Centrar títulos en móvil */
+  }
+}
+
+/* Clases de utilidad para espaciado responsivo */
+.mb-responsive {
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .mb-responsive {
+    margin-bottom: 1.5rem;
+  }
+}
+
+a {
+  color: var(--color-primary-accent);
+  text-decoration: none; /* Quitar subrayado por defecto */
+}
+
+a:hover {
+  color: var(--color-tertiary-accent);
+  text-decoration: underline; /* Subrayado en hover para claridad */
+}

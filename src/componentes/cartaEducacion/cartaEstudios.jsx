@@ -1,22 +1,24 @@
+import React from "react";
 import "./cartaEstudios.css";
 
-
-function CartaEstudios ({titulo, certificado}) {
-
-    const handleOpenImage = () => {
-        window.open(certificado, "_blank");
+function CartaEstudios ({titulo, certificadoPath}) {
+    const handleOpenCertificate = () => {
+        // Asumimos que certificadoPath es como "/certificates/React.png"
+        // process.env.PUBLIC_URL es útil si tu app no está en la raíz del dominio.
+        // Si está en la raíz, `certificadoPath` directo funciona.
+        window.open(process.env.PUBLIC_URL + certificadoPath, "_blank");
     };
 
     return (
-        <>
-            <div className="container-cartaEstudios">
-                <div className="row">
-                    <div className="cartaEstudios_1 col-12">{titulo}</div>
-                    <div className="cartaEstudios_2 col-12"><button className="botonEstudios" onClick={handleOpenImage}>Certificado</button></div>
-                </div>
-            </div>
-        </>
-    )
+        <div className="carta-estudios-item">
+            <h3 className="cartaEstudios_titulo">{titulo}</h3>
+            {certificadoPath && ( // Solo muestra el botón si hay un certificadoPath
+                <button className="botonEstudios" onClick={handleOpenCertificate}>
+                    Ver Certificado
+                </button>
+            )}
+        </div>
+    );
 }
 
 export default CartaEstudios;

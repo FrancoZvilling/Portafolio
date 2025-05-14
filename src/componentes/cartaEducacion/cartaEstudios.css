@@ -1,24 +1,48 @@
-.container-cartaEstudios{
-    display: flex;
-    align-items: center;
+.carta-estudios-item {
+  background-color: rgba(var(--color-background-medium-rgb), 0.3); /* Fondo sutil, necesitas --color-background-medium-rgb */
+  /* Si no tienes la variable rgb, puedes usar: background-color: rgba(8, 6, 124, 0.3); */
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem; /* Espacio entre items */
+  border-left: 4px solid var(--color-secondary-accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cartaEstudios_1{
-    font-size: 2rem;
-    color: rgb(174, 133, 221);
-    
+.carta-estudios-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.botonEstudios{
-    all: unset;
-    background-color: rgba(39, 233, 142, 0.986);
-    padding: 0.5em 1em;
-    border-radius: .2em;
-    margin-top: 1em;
+.cartaEstudios_titulo {
+  font-size: 1.3rem;
+  color: var(--color-text-on-dark-secondary);
+  margin-bottom: 0.75em;
+  font-weight: bold;
 }
 
-.botonEstudios:hover{
-    cursor: pointer;
-    background-color: rgb(235, 235, 100);
+.botonEstudios {
+  background-color: var(--color-primary-accent);
+  color: var(--color-text-button-on-accent);
+  padding: 0.6em 1.2em;
+  border-radius: .25em;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: inline-block; /* Para que el padding funcione bien */
+}
 
+.botonEstudios:hover {
+  background-color: var(--color-tertiary-accent);
+  color: var(--color-background-dark);
+}
+
+@media (max-width: 767.98px) {
+  .carta-estudios-item {
+    text-align: center; /* Centrar contenido en móvil */
+    padding: 1rem;
+  }
+  .cartaEstudios_titulo {
+    font-size: 1.15rem;
+  }
 }

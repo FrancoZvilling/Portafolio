@@ -1,24 +1,57 @@
-.card{
-    width: 18em;
-    background-color: rgb(144, 93, 202);
+.project-card {
+  width: 100%;
+  max-width: 22em; /* O ajusta según el diseño en columnas */
+  background-color: var(--color-secondary-accent);
+  border: none;
+  border-radius: 8px;
+  margin-left: auto; /* Centrar si está sola en una col-12 */
+  margin-right: auto;
+  margin-bottom: 2rem; /* Espacio entre cartas si hay varias */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.card_title{
-    color: rgba(39, 233, 142, 0.986);
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.card_text{
-    color: rgb(235, 235, 100);
-    text-align: center;
+.project-card-img {
+  width: 100%;
+  height: 220px; /* Altura fija o aspect-ratio */
+  object-fit: cover; /* Cubre sin distorsionar */
+  border-top-left-radius: 8px; /* Para que coincida con la card */
+  border-top-right-radius: 8px;
 }
 
-.card_body{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.project-card-title {
+  color: var(--color-primary-accent);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem; /* Ajusta según necesidad */
 }
 
-.card_body button{
-    background-color:  rgb(8, 6, 124);
-    border: none;
+.project-card-text {
+  color: var(--color-tertiary-accent);
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.btn-project-link {
+  background-color: var(--color-background-medium);
+  color: white;
+  border: none;
+  padding: 0.7em 1.5em;
+  text-decoration: none;
+  border-radius: 0.25em;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-project-link:hover {
+  background-color: var(--color-background-dark);
+  color: var(--color-primary-accent);
 }

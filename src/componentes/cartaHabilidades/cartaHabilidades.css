@@ -1,63 +1,67 @@
-.container-cartaHabilidades {
-    display: flex;
-    align-items: center;
-    margin-top: 1em;
+.carta-habilidades-group {
+  /* No necesita mucho estilo si el padre lo maneja */
 }
 
 .cartaHabilidades_titulo {
-    font-size: 2rem;
-    color: rgb(174, 133, 221)
+  font-size: 1.6rem; 
+  color: var(--color-text-on-dark-secondary);
+  margin-bottom: 1em;
+  font-weight: bold;
+  text-transform: uppercase; /* Para que se vea más como un título de grupo */
+  letter-spacing: 1px;
 }
 
-.icon-html {
-    color: #e34c26;
-}
-
-.icon-css {
-    color: #264de4;
-}
-
-.icon-js {
-    color: #f7df1e;
-}
-
-.icon-bootstrap {
-    color: #7952B3
-}
-
-.icon-react {
-    color: #61DBFB;
-}
-
-.icon-git{
-    color: #F05032;
-}
-
-.icon-github{
-    color: #000000;
-}
-
-.icon-sass{
-    color: #CC6699;
-}
-
-.icon-node{
-    color: #8CC84B;
-}
-
-.cartaHabiliades_iconos {
-    display: flex;
-    gap: 15px;
+.cartaHabiliades_iconos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px 20px; /* gap vertical y horizontal */
+  align-items: flex-start; /* Alinear arriba si los nombres tienen alturas diferentes */
 }
 
 .icono-con-nombre {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Espacio entre icono y nombre */
+  min-width: 90px; 
+  text-align: center;
 }
 
+.skill-icon {
+  /* Estilos comunes para todos los iconos de habilidad si es necesario */
+  transition: transform 0.2s ease-in-out;
+}
+.icono-con-nombre:hover .skill-icon {
+    transform: scale(1.15);
+}
+
+/* Colores específicos de iconos */
+.icon-html { color: #e34c26; }
+.icon-css { color: #264de4; }
+.icon-js { color: #f7df1e; background-color: #323330; padding: 3px; border-radius: 4px; /* Contraste para amarillo */ }
+.icon-bootstrap { color: #7952B3; }
+.icon-react { color: #61DBFB; }
+.icon-git{ color: #F05032; }
+.icon-github{ color: var(--color-text-on-dark-primary); /* Blanco o claro para contraste */ }
+.icon-sass{ color: #CC6699; }
+.icon-node{ color: #8CC84B; }
+
 .nombre-icono {
-    font-size: 18px;
-    font-weight: bold;
-    color: rgba(39, 233, 142, 0.986)
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-primary-accent);
+}
+
+@media (max-width: 767.98px) {
+  .cartaHabilidades_titulo {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .cartaHabiliades_iconos-container {
+    justify-content: center; /* Centrar los iconos en móvil */
+    gap: 20px 15px;
+  }
+  .icono-con-nombre {
+    min-width: 75px;
+  }
 }

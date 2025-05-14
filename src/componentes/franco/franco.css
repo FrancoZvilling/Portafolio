@@ -1,49 +1,65 @@
-.container-franco {
-    display: flex;
-    align-items: center;
-    margin-left: 300px;
-    padding: 20px;
-    min-height: 100vh; 
+/* .franco-section es el contenedor principal de esta vista */
+.franco-section {
+    display: flex; /* Para centrar verticalmente el contenido si es corto */
+    flex-direction: column;
+    justify-content: center; /* Centra el .row verticalmente */
+    flex-grow: 1; /* Para que ocupe el espacio disponible en .main-content */
 }
 
-.franco_1{
-    font-size: 6rem;
-    color: rgba(39, 233, 142, 0.986);
+/* franco_1 usa .section-title de App.css */
+
+.franco_2 {
+  font-size: 1.8rem;
+  color: var(--color-tertiary-accent);
+  font-weight: bold;
 }
 
-.franco_2{
-    font-size: 2rem;
-    color: rgb(235, 235, 100);
+.franco_3 {
+  color: var(--color-text-on-dark-secondary);
+  font-size: 1.1rem;
 }
 
-.franco_3{
-    color: rgb(174, 133, 221);
+.franco_4 {
+  color: var(--color-primary-accent);
+  font-size: 1rem;
 }
 
-.franco_4{
-    color: rgba(39, 233, 142, 0.986);
+.franco_4 a {
+  color: var(--color-primary-accent); /* Hereda de App.css pero se puede especificar */
+  font-weight: bold;
 }
 
-.franco_4 a{
-    color: rgba(39, 233, 142, 0.986);
-    margin-left: 6px;
+.franco_4 a:hover {
+  color: var(--color-tertiary-accent);
 }
 
-.franco_5 a{
-    all: unset;
+.btn-cv-download {
+  background-color: var(--color-primary-accent);
+  color: var(--color-text-button-on-accent);
+  border: none;
+  border-radius: .25em;
+  padding: .6em 1.2em;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none; /* Para el <a> */
+  display: inline-block;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
 }
 
-.franco_5 button{
-    all: unset;
-    cursor: pointer;
-    background-color:rgb(174, 133, 221);
-    border-radius: .2em;
-    padding: .2em .5em;
-    margin-top: 1.5em;
+.btn-cv-download:hover {
+  background-color: var(--color-tertiary-accent);
+  color: var(--color-background-dark);
+  transform: translateY(-2px); /* Pequeño efecto hover */
 }
 
-.franco_5 button:hover{
-    background-color: rgba(39, 233, 142, 0.986);
+/* Media queries específicas para Franco, si son necesarias adicionales a section-title */
+@media (max-width: 767.98px) {
+  .franco_2 {
+    font-size: 1.5rem;
+  }
+  .franco_3, .franco_4 {
+    font-size: 1rem;
+  }
 }
 
 

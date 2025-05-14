@@ -1,22 +1,42 @@
+import React from "react";
 import "./contacto.css";
 import { MdEmail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 
-
 function Contacto() {
     return (
-        <>
-            <div className="container-contacto">
-                <div className="row">
-                    <div className="contacto_1 col-12">¡CONTÁCTAME!</div>
-                    <div className="contacto_2 col-12">
-                        <MdEmail size={20} className="icon-email"/> <span className="titulo">Email:</span> <span className="email">francozvilling-programador@hotmail.com</span> <br />
-                        <FaWhatsapp size={20} className="icon-whatsapp"/> <span className="titulo2">WhatsApp:</span>  <span className="whatsapp"><a className="link" href="https://wa.me/3541315119">+54 9 11 1234-5678</a></span> <br />
+        <section className="contacto-section container-fluid">
+            <div className="row justify-content-center">
+                <div className="col-12">
+                    <h1 className="contacto_1 section-title text-center">¡CONTÁCTAME!</h1>
+                </div>
+            </div>
+            <div className="row justify-content-center">
+                <div className="col-md-9 col-lg-7">
+                    <div className="contact-info-wrapper">
+                        <div className="contact-item">
+                            <MdEmail size={30} className="contact-icon icon-email" />
+                            <div className="contact-details">
+                                <span className="contact-label">Email:</span>
+                                <a href="mailto:francozvilling-programador@hotmail.com" className="contact-link">
+                                    francozvilling-programador@hotmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <div className="contact-item">
+                            <FaWhatsapp size={30} className="contact-icon icon-whatsapp" />
+                            <div className="contact-details">
+                                <span className="contact-label">WhatsApp:</span>
+                                <a href="https://wa.me/5493541315119" target="_blank" rel="noopener noreferrer" className="contact-link">
+                                    +54 9 3541 315119
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </>
-    )
+        </section>
+    );
 }
 
 export default Contacto;

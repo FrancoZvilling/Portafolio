@@ -1,34 +1,43 @@
-.container-sobre_mi {
+.sobreMi-section {
     display: flex;
-    align-items: center;
-    margin-left: 300px;
-    padding: 20px;
-    min-height: 100vh; 
+    flex-direction: column;
+    justify-content: center; /* Centra el .row verticalmente */
+    flex-grow: 1; /* Para que ocupe el espacio disponible en .main-content */
 }
 
-.sobre_mi_1{
-    font-size: 6rem;
-    color: rgba(39, 233, 142, 0.986);
+/* .sobre_mi_1 usa .section-title de App.css */
+
+.sobre_mi_2 {
+  color: var(--color-tertiary-accent);
+  line-height: 1.7;
+  font-size: 1.05rem; /* Ligero ajuste */
 }
 
-.sobre_mi_2{
- color: rgb(235, 235, 100);
+.sobre_mi_3 {
+  color: var(--color-primary-accent);
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
-.sobre_mi_3{
-    color: rgba(39, 233, 142, 0.986);
+.sobre_mi_4 {
+  color: var(--color-text-on-dark-secondary);
+  font-size: 1.05rem;
 }
 
-.sobre_mi_4{
-    color: rgb(174, 133, 221);
+.sobre_mi_4 a {
+  color: var(--color-primary-accent);
+  font-weight: bold;
 }
 
-.sobre_mi_4 a{
-    color: rgba(39, 233, 142, 0.986);
-    margin-left: 6px;
+.sobre_mi_4 a:hover {
+  color: var(--color-tertiary-accent);
 }
 
-.sobre_mi_5{
-    background-color: rgba(39, 233, 142, 0.986);
-    border-radius: .2em;
+@media (max-width: 767.98px) {
+  .sobreMi-section .text-md-start p { /* Para párrafos dentro de la sección */
+    text-align: justify; /* Justificar texto en móvil para mejor lectura de bloques largos */
+  }
+  .sobre_mi_2, .sobre_mi_3, .sobre_mi_4 {
+    font-size: 1rem;
+  }
 }

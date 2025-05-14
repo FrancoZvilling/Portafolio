@@ -6,7 +6,7 @@ import Franco from "./componentes/franco/franco";
 import SobreMi from "./componentes/sobreMi/sobreMi";
 import MisTrabajos from "./componentes/misTrabajos/misTrabajos";
 import Educacion from "./componentes/educacion/educacion";
-import Habilidades from "./componentes/Habilidades/habilidades"; // Corregido el nombre
+import Habilidades from "./componentes/habilidades/habilidades"; // Corregido el nombre
 import Contacto from "./componentes/contacto/contacto";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 

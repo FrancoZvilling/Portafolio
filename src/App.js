@@ -6,7 +6,7 @@ import Franco from "./componentes/franco/franco";
 import SobreMi from "./componentes/sobreMi/sobreMi";
 import MisTrabajos from "./componentes/misTrabajos/misTrabajos";
 import Educacion from "./componentes/educacion/educacion";
-import Habilidades from "./componentes/habilidades/habilidades"; // Corregido el nombre
+import Habilidades from "./componentes/habilidades/habilidades";
 import Contacto from "./componentes/contacto/contacto";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
@@ -20,7 +20,8 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar cerrada por defecto en móvil
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [mainContentClass, setMainContentClass] = useState('');
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -40,38 +41,28 @@ function App() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isSidebarOpen]);
-  
-  // Ajusta `isSidebarOpen` en resize y determina `mainContentClass`
-  const [mainContentClass, setMainContentClass] = useState('');
 
+  // Ajusta `isSidebarOpen` y `mainContentClass` al redimensionar
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setIsSidebarOpen(true); // En desktop, la sidebar está "abierta" lógicamente para el layout
+        setIsSidebarOpen(true);
         setMainContentClass('sidebar-active');
       } else {
-        // En móvil, si se redimensiona desde desktop donde estaba abierta, la cerramos.
-        // Si ya estaba cerrada (por el usuario), se mantiene cerrada.
-        if(isSidebarOpen && !document.querySelector('.sidebar-toggle-btn').contains(document.activeElement)){
-            // Solo cierra si no fue explícitamente abierta en móvil
-            // Esta lógica puede ser compleja, por ahora, si se redimensiona a móvil, se cierra si estaba "desktop-open"
-        }
-        // La clase 'sidebar-active' no se aplica en móvil para el margin-left
-        setMainContentClass(''); 
+        setMainContentClass('');
       }
     };
 
     handleResize(); // Llamada inicial
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []); // Cuidado con la dependencia de isSidebarOpen aquí, puede causar bucles si no se maneja bien.
-           // Por ahora, se ejecuta al montar y al cambiar tamaño.
+  }, []);
 
   return (
     <BrowserRouter>
       <ScrollToTop />
       <BarraDeNavegacion isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      <main className={`main-content ${window.innerWidth < 768 ? '' : (isSidebarOpen ? 'sidebar-active' : '')}`}>
+      <main className={`main-content ${mainContentClass}`}>
         <Routes>
           <Route path="/" element={<Franco />} />
           <Route path="/sobremi" element={<SobreMi />} />

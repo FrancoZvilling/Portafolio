@@ -9,5 +9,5 @@
 
 /* .educacion_1 usa .section-title y text-center en JSX */
 .educacion_1 {
-   margin-bottom: 2em !important; /* Más espacio antes de las cartas de estudio */
+   margin-bottom: 2em !important; 
 }

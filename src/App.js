@@ -10,7 +10,7 @@ import Educacion from "./componentes/educacion/educacion";
 import Habilidades from "./componentes/habilidades/habilidades";
 import Contacto from "./componentes/contacto/contacto";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { LanguageProvider } from "./context/LanguageContext"; // IMPORTAR
+import { LanguageProvider } from "./context/LanguageContext";
 
 // Componente para resetear el scroll en cambio de ruta
 function ScrollToTop() {
@@ -22,9 +22,11 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768); // Sidebar abierta por defecto en desktop
-  const [mainContentClass, setMainContentClass] = useState(window.innerWidth >= 768 ? 'sidebar-active' : '');
-
+  // Estado inicial correcto basado en el ancho de la ventana
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768);
+  const [mainContentClass, setMainContentClass] = useState(
+    window.innerWidth >= 768 ? 'sidebar-active' : ''
+  );
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -36,8 +38,7 @@ function App() {
       if (window.innerWidth < 768 && isSidebarOpen) {
         const sidebar = document.querySelector('.sidebar-nav-menu');
         const toggleButton = document.querySelector('.sidebar-toggle-btn');
-        // Asegurarse que el click no sea en el botón de toggle ni dentro del sidebar
-        if (sidebar && !sidebar.contains(event.target) && 
+        if (sidebar && !sidebar.contains(event.target) &&
             toggleButton && !toggleButton.contains(event.target)) {
           setIsSidebarOpen(false);
         }
@@ -47,42 +48,34 @@ function App() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isSidebarOpen]); // Dependencia: isSidebarOpen
 
-  // Ajusta `isSidebarOpen` y `mainContentClass` al redimensionar
+  // Ajusta `isSidebarOpen` y `mainContentClass` al redimensionar y al montar
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsSidebarOpen(true); // En desktop, la sidebar siempre está visible
-        setMainContentClass('sidebar-active');
-      } else {
-        // En móvil, NO cerramos automáticamente la sidebar al redimensionar si ya estaba abierta.
-        // El usuario la maneja con el botón. Solo quitamos la clase que empuja el contenido.
-        setMainContentClass(''); 
-        // Si quieres que se cierre al pasar de desktop a móvil:
-        // setIsSidebarOpen(false); 
+      if (window.innerWidth >= 768) { // DESKTOP
+        setIsSidebarOpen(true); // En desktop, la sidebar está siempre visible y conceptualmente "abierta"
+        setMainContentClass('sidebar-active'); // El contenido principal se desplaza
+      } else { // MOBILE
+        // En móvil, isSidebarOpen es manejada por el usuario a través de toggleSidebar.
+        // mainContentClass siempre es '' porque la sidebar se superpone y no empuja el contenido.
+        setMainContentClass('');
       }
     };
 
-    // Llamada inicial para establecer el estado correcto basado en el tamaño de la ventana
-    handleResize(); 
-
+    handleResize(); // Llamada inicial para asegurar la consistencia del estado al montar
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []); // Se ejecuta solo al montar y desmontar
 
-  // Efecto para actualizar mainContentClass cuando isSidebarOpen cambia (solo en desktop)
-  useEffect(() => {
-    if (window.innerWidth >= 768) {
-        setMainContentClass(isSidebarOpen ? 'sidebar-active' : '');
-    }
-  }, [isSidebarOpen]);
-
+  // El useEffect que actualizaba mainContentClass basado en isSidebarOpen (tercer useEffect) se ha eliminado
+  // ya que handleResize maneja adecuadamente mainContentClass tanto para desktop como para móvil.
 
   return (
-    <LanguageProvider> {/* ENVOLVER CON PROVIDER */}
+    <LanguageProvider>
       <BrowserRouter>
         <ScrollToTop />
         <BarraDeNavegacion isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <main className={`main-content ${isSidebarOpen && window.innerWidth >= 768 ? 'sidebar-active' : ''}`}>
+        {/* Ahora usamos mainContentClass directamente */}
+        <main className={`main-content ${mainContentClass}`}>
           <Routes>
             <Route path="/" element={<Franco />} />
             <Route path="/sobremi" element={<SobreMi />} />

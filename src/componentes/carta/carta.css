@@ -1,69 +1,90 @@
+/* src/componentes/carta/carta.css */
 .project-card {
-  width: 100%; /* La carta ocupará el 100% del ancho de su columna contenedora */
-  max-width: 22em; /* Mantenemos un ancho máximo para que no se estire demasiado en columnas muy anchas. Puedes ajustar este valor. */
+  width: 100%;
+  max-width: 24em; /* Ligeramente más ancho si se desea, o mantener 22em */
   background-color: var(--color-secondary-accent);
-  border: none;
-  border-radius: 8px;
-  margin-left: auto; /* Centrará la carta dentro de su columna si max-width es menor que el ancho de la columna */
+  border: none; /* Mantenemos sin borde explícito */
+  border-radius: 12px; /* Bordes un poco más redondeados para un look moderno */
+  margin-left: auto;
   margin-right: auto;
-  /* margin-bottom: 2rem;  Si usas g-4 en la row, este margin-bottom podría ser redundante o causar doble espaciado vertical.
-                           Prueba con y sin él. Si no usas g-4 o similar, mantenlo.
-                           Para Bootstrap 5 con g-4, es mejor quitarlo o reducirlo para evitar exceso de espacio.
-                           Si lo dejas, Bootstrap 5 con g-4 (que añade padding) y este margin-bottom se sumarán.
-                           Si no usas g-4, este margin-bottom es crucial para el espacio vertical.
-                           Vamos a comentarlo por ahora asumiendo que g-4 está activo.
-  */
-  margin-bottom: 0; /* Si usas g-4 en la row, el espaciado vertical lo maneja el gutter de la row. */
-                     /* Si las cartas no se espacian verticalmente, descomenta la línea de arriba y comenta esta. */
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  display: flex; /* Necesario para que h-100 funcione correctamente con Card.Body flex-column */
-  flex-direction: column; /* Alinea el contenido de la carta verticalmente */
+  margin-bottom: 0; /* Controlado por g-4 en la row */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Importante para contener efectos de imagen en hover */
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transform: translateY(-8px); /* Un poco más de "lift" */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25); /* Sombra más pronunciada en hover */
+}
+
+.project-card-img-container {
+  width: 100%;
+  overflow: hidden; /* Clave para el efecto de zoom en la imagen sin que desborde */
+  /* Opcional: definir un aspect-ratio para consistencia si las imágenes varían mucho */
+  /* aspect-ratio: 16 / 10; */
 }
 
 .project-card-img {
   width: 100%;
-  height: 200px; /* Reducimos un poco la altura, ajusta a tu gusto */
-  object-fit: cover; 
-  border-top-left-radius: 8px; 
-  border-top-right-radius: 8px;
+  height: 220px; /* Altura de la imagen, puedes ajustarla */
+  object-fit: cover;
+  /* No necesitamos border-radius aquí si .project-card tiene overflow:hidden y .project-card-img-container */
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease-out; /* Transición más suave para el zoom y filtro */
 }
+
+.project-card:hover .project-card-img {
+  transform: scale(1.05); /* Zoom sutil a la imagen en hover de la carta */
+  filter: brightness(0.9); /* Oscurece ligeramente la imagen para que el texto (si estuviera encima) resalte más, o solo por estética */
+}
+
+/* Card.Body ya tiene d-flex flex-column desde el JSX y p-4 */
 
 .project-card-title {
   color: var(--color-primary-accent);
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 0.75rem;
-  font-size: 1.3rem; /* Ligeramente más pequeño, ajusta a tu gusto */
+  font-weight: 600; /* Ligeramente menos bold que 700, o mantener bold */
+  text-align: left; /* Título alineado a la izquierda */
+  font-size: 1.35rem; /* Un poco más grande */
+  /* margin-bottom: 0.75rem; ya está en el JSX como mb-3 (que es 1rem por defecto en BS5) */
 }
 
 .project-card-text {
   color: var(--color-tertiary-accent);
-  text-align: center;
-  font-size: 0.9rem; /* Ligeramente más pequeño, ajusta a tu gusto */
-  margin-bottom: 1.25rem;
-  /* flex-grow: 1; ya está en Card.Body, no es necesario aquí explícitamente si Card.Body es flex */
+  text-align: left; /* Texto alineado a la izquierda */
+  font-size: 0.95rem; /* Ligeramente más grande */
+  line-height: 1.6;
+  /* margin-bottom: 1.25rem; ya está en el JSX como mb-3 */
 }
 
 .btn-project-link {
-  background-color: var(--color-background-medium);
-  color: white;
-  border: none;
-  padding: 0.6em 1.2em; /* Ligeramente más pequeño */
+  background-color: transparent; /* Botón transparente inicialmente */
+  color: var(--color-primary-accent); /* Color del texto del botón */
+  border: 2px solid var(--color-primary-accent); /* Borde con color primario */
+  padding: 0.6em 1.5em; /* Padding ajustado */
   text-decoration: none;
-  border-radius: 0.25em;
-  font-weight: bold;
+  border-radius: 6px; /* Bordes del botón */
+  font-weight: 600;
   text-align: center;
-  display: inline-block;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  /* align-self-center y mt-auto ya están en el JSX, lo cual es bueno */
+  display: inline-block; /* O block si quieres que ocupe todo el ancho disponible */
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.15s ease;
+  align-self: flex-start; /* Asegura alineación a la izquierda */
+  /* width: auto; /* Por defecto para inline-block */
 }
 
 .btn-project-link:hover {
-  background-color: var(--color-background-dark);
-  color: var(--color-primary-accent);
+  background-color: var(--color-primary-accent); /* Fondo cambia al color primario */
+  color: var(--color-background-medium); /* Texto del botón cambia para contraste */
+  transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* Si en pantallas pequeñas quieres centrar el contenido de la card de nuevo */
+@media (max-width: 767.98px) {
+  .project-card-title,
+  .project-card-text {
+    text-align: center;
+  }
+  .btn-project-link {
+    align-self: center; /* Centrar el botón en móvil */
+  }
 }

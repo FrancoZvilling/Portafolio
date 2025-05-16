@@ -7,8 +7,8 @@ import { useLanguage } from "../../context/LanguageContext";
 function MisTrabajos() {
     const { t, tArray } = useLanguage();
 
-    // Datos base de los proyectos (imágenes y links son fijos)
-    const proyectosBase = [
+    // ... (tu lógica para proyectosBase y proyectosTraducidosTextos se mantiene igual) ...
+     const proyectosBase = [ // Asegúrate que estos datos coinciden con los que tenías
         {
             img: "/images/library.png",
             linkProyecto: "https://libreriaonlinezwilling.netlify.app/"
@@ -31,10 +31,8 @@ function MisTrabajos() {
         }
     ];
 
-    // Obtenemos los títulos y descripciones traducidos del array 'misTrabajos.projects'
     const proyectosTraducidosTextos = tArray('misTrabajos.projects');
 
-    // Combinamos los textos traducidos con los datos base
     const proyectos = proyectosBase.map((proyectoBase, index) => {
         const textoTraducido = proyectosTraducidosTextos[index] || { titulo: "Project", descripcion: "Description missing" };
         return {
@@ -44,6 +42,7 @@ function MisTrabajos() {
         };
     });
 
+
     return (
         <section className="misTrabajos-section container-fluid">
             <div className="row justify-content-center">
@@ -51,9 +50,11 @@ function MisTrabajos() {
                     <h1 className="mis_trabajos_1 section-title text-center">{t('misTrabajos.title')}</h1>
                 </div>
             </div>
-        
-            <div className="row justify-content-center g-4"> {/* g-2 a g-4 para más espacio */}
+           
+            {/* Usamos g-4 o g-md-5 para más espaciado en desktop si se desea */}
+            <div className="row justify-content-center g-4 g-lg-5">
                 {proyectos.map((proyecto, index) => (
+                    // d-flex y align-items-stretch son importantes para que las cartas tengan la misma altura si su contenido varía
                     <div key={index} className="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
                         <Carta
                             img={proyecto.img}

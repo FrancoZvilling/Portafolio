@@ -1,13 +1,18 @@
+/* src/componentes/misTrabajos/misTrabajos.css */
 .misTrabajos-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; /* Lo quitamos si queremos que el contenido empiece desde arriba */
     flex-grow: 1;
-    padding-top: 2rem; /* Espacio adicional arriba */
-    padding-bottom: 2rem; /* Espacio adicional abajo */
+    padding-top: 2rem; 
+    padding-bottom: 3rem; /* Un poco más de padding abajo para que no quede pegado al footer si lo hubiera */
 }
 
-/* .mis_trabajos_1 usa .section-title y text-center en JSX */
-.mis_trabajos_1 {
-   margin-bottom: 2em !important; /* Más espacio antes de las cartas */
+.mis_trabajos_1 { /* Ya usa .section-title y text-center en JSX */
+   margin-bottom: 2.5em !important; /* Un poco más de espacio antes de las cartas */
 }
+
+/* Estilos adicionales para el contenedor de cartas si son necesarios */
+/* .row.justify-content-center { */
+  /* Si necesitas algún ajuste específico para este row que no puedas hacer con clases de Bootstrap */
+/* } */

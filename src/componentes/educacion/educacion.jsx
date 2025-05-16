@@ -1,20 +1,34 @@
+// src/componentes/educacion/educacion.jsx
 import React from "react";
 import "./educacion.css";
-import CartaEstudios from "../cartaEducacion/cartaEstudios";
+import CartaEstudios from "../cartaEducacion/cartaEstudios"; // Ajusta la ruta si es necesario
+import { useLanguage } from "../../context/LanguageContext";
 
 function Educacion () {
-    const estudios = [
-        { titulo: "Carrera de desarrollo Frontend React - Septiembre de 2023", certificadoPath: "/certificates/Frontend.png" },
-        { titulo: "React.js - Septiembre de 2023", certificadoPath: "/certificates/React.png" },
-        { titulo: "JavaScript - Junio de 2023", certificadoPath: "/certificates/JavaScript.png" },
-        { titulo: "Desarrollo web - Abril de 2023", certificadoPath: "/certificates/Desarrollo_web.png" }
+    const { t, tArray } = useLanguage();
+
+    // Los paths de los certificados son fijos
+    const certificadosPaths = [
+        "/certificates/Frontend.png",
+        "/certificates/React.png",
+        "/certificates/JavaScript.png",
+        "/certificates/Desarrollo_web.png"
     ];
+
+    // Obtenemos los títulos traducidos del array 'educacion.studies'
+    const estudiosTraducidos = tArray('educacion.studies');
+
+    // Combinamos los títulos traducidos con sus respectivos paths de certificado
+    const estudios = estudiosTraducidos.map((estudio, index) => ({
+        titulo: estudio.title, // 'title' es la clave dentro de cada objeto en el array JSON
+        certificadoPath: certificadosPaths[index] || null // Aseguramos que haya un path
+    }));
 
     return(
         <section className="educacion-section container-fluid">
             <div className="row justify-content-center">
                 <div className="col-12">
-                    <h1 className="educacion_1 section-title text-center">MIS ESTUDIOS</h1>
+                    <h1 className="educacion_1 section-title text-center">{t('educacion.title')}</h1>
                 </div>
             </div>
             <div className="row justify-content-center">

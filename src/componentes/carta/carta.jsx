@@ -1,19 +1,22 @@
+// src/componentes/carta/carta.jsx
 import Card from 'react-bootstrap/Card';
-// import Button from 'react-bootstrap/Button'; // No lo usaremos directamente
 import "./carta.css";
+import { useLanguage } from "../../context/LanguageContext";
 
 function Carta({ img, titulo, descripcion, linkProyecto }) {
+  const { t } = useLanguage();
+
   return (
-    <Card className="project-card h-100 shadow"> {/* h-100 para misma altura en flexbox, shadow para profundidad */}
+    <Card className="project-card h-100 shadow">
       <Card.Img 
         variant="top" 
         src={img} 
-        alt={`Imagen del proyecto ${titulo}`} 
+        alt={`${t('carta.altProjectImage')} ${titulo}`}
         loading="lazy"
         className="project-card-img"
       />
-      <Card.Body className='d-flex flex-column'> {/* Para que el botón se alinee abajo */}
-        <Card.Title as="h3" className='project-card-title'>{titulo}</Card.Title> {/* Título semántico */}
+      <Card.Body className='d-flex flex-column'>
+        <Card.Title as="h3" className='project-card-title'>{titulo}</Card.Title>
         <Card.Text className='project-card-text flex-grow-1'>
           {descripcion}
         </Card.Text>
@@ -21,9 +24,9 @@ function Carta({ img, titulo, descripcion, linkProyecto }) {
             href={linkProyecto} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="btn-project-link mt-auto align-self-center" // mt-auto y align-self-center
+            className="btn-project-link mt-auto align-self-center"
         >
-          Ir al proyecto
+          {t('carta.goToProject')}
         </a>
       </Card.Body>
     </Card>

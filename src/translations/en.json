@@ -1,0 +1,94 @@
+
+{
+    "navbar": {
+        "myName": "FRANCO ZVILLING",
+        "aboutMe": "ABOUT ME",
+        "myWorks": "MY WORKS",
+        "education": "EDUCATION",
+        "skills": "SKILLS",
+        "contact": "CONTACT",
+        "closeMenu": "Close navigation menu",
+        "openMenu": "Open navigation menu"
+    },
+    "carta": {
+        "goToProject": "Go to project",
+        "altProjectImage": "Project image"
+    },
+    "cartaEstudios": {
+        "viewCertificate": "View Certificate"
+    },
+    "contacto": {
+        "title": "CONTACT ME!",
+        "emailLabel": "Email:",
+        "whatsappLabel": "WhatsApp:"
+    },
+    "educacion": {
+        "title": "MY STUDIES",
+        "studies": [
+            { "title": "Frontend React Development Career - September 2023" },
+            { "title": "React.js - September 2023" },
+            { "title": "JavaScript - June 2023" },
+            { "title": "Web Development - April 2023" }
+        ]
+    },
+    "franco": {
+        "title": "FRANCO ZVILLING",
+        "subtitle": "FRONTEND DEVELOPER",
+        "welcome": "WELCOME TO MY WEB PORTFOLIO",
+        "contactMe": "If you want to contact me, you can write to me at",
+        "downloadCV": "Download my CV"
+    },
+    "habilidades": {
+        "title": "SKILLS",
+        "languages": "Languages",
+        "librariesFrameworks": "Libraries and Frameworks",
+        "toolsAndOthers": "Tools and Others",
+        "skillsList": {
+            "html": "HTML",
+            "css": "CSS",
+            "javascript": "JavaScript",
+            "bootstrap": "Bootstrap",
+            "react": "React.js",
+            "git": "Git",
+            "github": "GitHub",
+            "node": "Node.js",
+            "sass": "Sass"
+        }
+    },
+    "misTrabajos": {
+        "title": "MY WORKS",
+        "projects": [
+            {
+                "titulo": "Ecommerce - Bookstore",
+                "descripcion": "This is my bookstore created with React.js, CSS, JavaScript, and HTML."
+            },
+            {
+                "titulo": "Web Restaurant Menu",
+                "descripcion": "Restaurant menu created with React.js, CSS, and JavaScript."
+            },
+            {
+                "titulo": "Restaurant Menu with Delivery",
+                "descripcion": "Delivery menu created with React.js, CSS, and JavaScript."
+            },
+            {
+                "titulo": "Harry Potter Test",
+                "descripcion": "Interactive test created with HTML, CSS, and JavaScript."
+            },
+            {
+                "titulo": "Ecommerce - Bookstore",
+                "descripcion": "This is my first bookstore ecommerce created with React.js, CSS, JavaScript, and HTML."
+            }
+        ]
+    },
+    "sobreMi": {
+        "title": "ABOUT ME",
+        "paragraph1": "Since I was a child, I have always been fascinated by the world of technology. During the pandemic, observing the rise of technological careers and the possibility of working from a computer, I decided to dive into the universe of programming.",
+        "paragraph2": "Today, I am a frontend developer with solid skills in HTML, CSS, and JavaScript, as well as experience in frameworks like React and libraries like Bootstrap and SASS.",
+        "paragraph3": "I am excited to take the next step in my professional career, bringing motivation, energy, and a great passion for technology and web development.",
+        "paragraph4": "If you want to know more about me, you can see my",
+        "linkedin": "LinkedIn"
+    },
+    "languageSwitcher": {
+        "language": "Language"
+    }
+}

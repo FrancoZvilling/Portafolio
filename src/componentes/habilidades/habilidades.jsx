@@ -1,40 +1,46 @@
+// src/componentes/habilidades/habilidades.jsx
 import React from "react";
-import "./habilidades.css"; // Asegúrate que el nombre del archivo CSS coincida
-import CartaHabilidades from "../cartaHabilidades/cartaHabilidades";
+import "./habilidades.css";
+import CartaHabilidades from "../cartaHabilidades/cartaHabilidades"; // Ajusta la ruta si es necesario
 import { TiHtml5 } from "react-icons/ti";
 import { FaCss3Alt, FaReact, FaGitSquare, FaGithub, FaNodeJs } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { FaBootstrap, FaSass } from "react-icons/fa6";
+import { useLanguage } from "../../context/LanguageContext";
 
 function Habilidades() {
+    const { t } = useLanguage();
+
+    // Los componentes de íconos y clases CSS son fijos
+    // Los nombres se obtienen del archivo de traducción
     const iconosLenguajes = [
-        { componente: TiHtml5, clase: "icon-html", nombre: "HTML" },
-        { componente: FaCss3Alt, clase: "icon-css", nombre: "CSS" },
-        { componente: IoLogoJavascript, clase: "icon-js", nombre: "JavaScript" },
+        { componente: TiHtml5, clase: "icon-html", nombre: t("habilidades.skillsList.html") },
+        { componente: FaCss3Alt, clase: "icon-css", nombre: t("habilidades.skillsList.css") },
+        { componente: IoLogoJavascript, clase: "icon-js", nombre: t("habilidades.skillsList.javascript") },
     ];
     const iconosLibreriasFrameworks = [
-        { componente: FaBootstrap, clase: "icon-bootstrap", nombre: "Bootstrap" },
-        { componente: FaReact, clase: "icon-react", nombre: "React.js" },
+        { componente: FaBootstrap, clase: "icon-bootstrap", nombre: t("habilidades.skillsList.bootstrap") },
+        { componente: FaReact, clase: "icon-react", nombre: t("habilidades.skillsList.react") },
     ];
     const iconosHerramientas = [
-        { componente: FaGitSquare, clase: "icon-git", nombre: "Git" },
-        { componente: FaGithub, clase: "icon-github", nombre: "GitHub" },
-        { componente: FaNodeJs, clase: "icon-node", nombre: "Node.js" },
-        { componente: FaSass, clase: "icon-sass", nombre: "Sass" },
+        { componente: FaGitSquare, clase: "icon-git", nombre: t("habilidades.skillsList.git") },
+        { componente: FaGithub, clase: "icon-github", nombre: t("habilidades.skillsList.github") },
+        { componente: FaNodeJs, clase: "icon-node", nombre: t("habilidades.skillsList.node") },
+        { componente: FaSass, clase: "icon-sass", nombre: t("habilidades.skillsList.sass") },
     ];
 
     return (
         <section className="habilidades-section container-fluid">
             <div className="row justify-content-center">
                 <div className="col-12">
-                    <h1 className="habilidades_1 section-title text-center">HABILIDADES</h1>
+                    <h1 className="habilidades_1 section-title text-center">{t('habilidades.title')}</h1>
                 </div>
             </div>
             <div className="row justify-content-center">
                 <div className="col-md-11 col-lg-9">
-                    <CartaHabilidades titulo={"Lenguajes"} iconos={iconosLenguajes} />
-                    <CartaHabilidades titulo={"Librerías y Frameworks"} iconos={iconosLibreriasFrameworks} />
-                    <CartaHabilidades titulo={"Herramientas y Otros"} iconos={iconosHerramientas} />
+                    <CartaHabilidades titulo={t("habilidades.languages")} iconos={iconosLenguajes} />
+                    <CartaHabilidades titulo={t("habilidades.librariesFrameworks")} iconos={iconosLibreriasFrameworks} />
+                    <CartaHabilidades titulo={t("habilidades.toolsAndOthers")} iconos={iconosHerramientas} />
                 </div>
             </div>
         </section>

@@ -46,9 +46,9 @@
 .sidebar-internal-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra horizontalmente el logo y la lista */
-  width: 90%; /* Un poco de espacio a los lados dentro de la sidebar */
-  max-width: 220px; /* Un ancho máximo para el contenido interno */
+  align-items: center; 
+  width: 90%; 
+  max-width: 220px; 
 }
 
 @media (min-width: 768px) {
@@ -58,25 +58,25 @@
   .sidebar-nav-menu {
     transform: translateX(0);
     width: var(--sidebar-width-desktop);
-    /* Las propiedades de centrado (display:flex, align-items, justify-content) se heredan o aplican igual */
-    padding: 2rem 0; /* Ajuste de padding para desktop */
+    
+    padding: 2rem 0; 
   }
   .sidebar-internal-content {
-    width: 100%; /* En desktop puede usar más ancho interno si se desea */
-    max-width: 240px; /* O un valor acorde al sidebar-width-desktop */
+    width: 100%; 
+    max-width: 240px; 
   }
 }
 
 .sidebar-header {
-  margin-bottom: 1.5em; /* Espacio entre logo y lista, ajusta según gusto */
-  /* text-center y w-100 vienen de Bootstrap y son útiles */
+  margin-bottom: 1.5em; 
+  
 }
 
 .sidebar-logo {
-  width: 160px; /* Ajusta el tamaño del logo como prefieras */
+  width: 160px; 
   max-width: 100%;
   height: auto;
-  /* margin-bottom ya no es necesario aquí, se maneja en .sidebar-header */
+  
 }
 
 @media (min-width: 768px) {
@@ -95,8 +95,8 @@
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* Los items de la lista ocuparán el ancho disponible de .sidebar-internal-content */
-  width: 100%; /* La lista usa todo el ancho de .sidebar-internal-content */
+  align-items: stretch; 
+  width: 100%; 
 }
 
 .nav-list-item {
@@ -107,7 +107,7 @@
   display: block;
   width: 100%;
   padding: 0.8em 1em;
-  margin: 0.3em 0; /* Reducido un poco el margen vertical entre items */
+  margin: 0.3em 0; 
   text-align: center;
   color: var(--color-secondary-accent);
   text-decoration: none;
@@ -122,4 +122,39 @@
   color: var(--color-primary-accent);
   background-color: rgba(255, 255, 255, 0.05);
   border-left: 3px solid var(--color-primary-accent);
+}
+
+/* ... tu CSS existente ... */
+
+.language-switcher-container {
+  margin-top: 1.5em; /* Espacio arriba del botón */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1em; /* Para que no quede pegado abajo si hay scroll */
+}
+
+.language-switch-btn {
+  background-color: var(--color-secondary-accent);
+  color: var(--color-text-on-dark-primary);
+  border: 1px solid var(--color-primary-accent); /* Borde sutil */
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+  font-size: 0.9rem;
+}
+
+.language-switch-btn:hover {
+  background-color: var(--color-primary-accent);
+  color: var(--color-text-button-on-accent);
+  transform: translateY(-1px);
+}
+
+/* Asegurar que el contenido interno pueda scrollear si es necesario, especialmente con el botón de idioma */
+.sidebar-internal-content {
+    /* ... tus estilos existentes ... */
+    /* padding-bottom: 60px; /* Dar espacio para el botón de idioma si el contenido es largo y scrollea */
+    /* Esto puede no ser necesario si .sidebar-nav-menu ya tiene overflow-y: auto y buen padding */
 }

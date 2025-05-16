@@ -26,7 +26,7 @@ function MisTrabajos() {
             img: "/images/hp.png",
             titulo: "Test Harry Potter",
             descripcion: "Test interactivo creado con HTML, CSS y JavaScript.",
-            linkProyecto: "http://localhost:3000/mistrabajos"
+            linkProyecto: "https://test-hpotter.netlify.app/"
         },
         {
             img: "/images/proyecto-libreria.webp",

@@ -1,13 +1,23 @@
 .project-card {
-  width: 100%;
-  max-width: 22em; /* O ajusta según el diseño en columnas */
+  width: 100%; /* La carta ocupará el 100% del ancho de su columna contenedora */
+  max-width: 22em; /* Mantenemos un ancho máximo para que no se estire demasiado en columnas muy anchas. Puedes ajustar este valor. */
   background-color: var(--color-secondary-accent);
   border: none;
   border-radius: 8px;
-  margin-left: auto; /* Centrar si está sola en una col-12 */
+  margin-left: auto; /* Centrará la carta dentro de su columna si max-width es menor que el ancho de la columna */
   margin-right: auto;
-  margin-bottom: 2rem; /* Espacio entre cartas si hay varias */
+  /* margin-bottom: 2rem;  Si usas g-4 en la row, este margin-bottom podría ser redundante o causar doble espaciado vertical.
+                           Prueba con y sin él. Si no usas g-4 o similar, mantenlo.
+                           Para Bootstrap 5 con g-4, es mejor quitarlo o reducirlo para evitar exceso de espacio.
+                           Si lo dejas, Bootstrap 5 con g-4 (que añade padding) y este margin-bottom se sumarán.
+                           Si no usas g-4, este margin-bottom es crucial para el espacio vertical.
+                           Vamos a comentarlo por ahora asumiendo que g-4 está activo.
+  */
+  margin-bottom: 0; /* Si usas g-4 en la row, el espaciado vertical lo maneja el gutter de la row. */
+                     /* Si las cartas no se espacian verticalmente, descomenta la línea de arriba y comenta esta. */
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex; /* Necesario para que h-100 funcione correctamente con Card.Body flex-column */
+  flex-direction: column; /* Alinea el contenido de la carta verticalmente */
 }
 
 .project-card:hover {
@@ -17,9 +27,9 @@
 
 .project-card-img {
   width: 100%;
-  height: 220px; /* Altura fija o aspect-ratio */
-  object-fit: cover; /* Cubre sin distorsionar */
-  border-top-left-radius: 8px; /* Para que coincida con la card */
+  height: 200px; /* Reducimos un poco la altura, ajusta a tu gusto */
+  object-fit: cover; 
+  border-top-left-radius: 8px; 
   border-top-right-radius: 8px;
 }
 
@@ -28,27 +38,29 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 0.75rem;
-  font-size: 1.4rem; /* Ajusta según necesidad */
+  font-size: 1.3rem; /* Ligeramente más pequeño, ajusta a tu gusto */
 }
 
 .project-card-text {
   color: var(--color-tertiary-accent);
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Ligeramente más pequeño, ajusta a tu gusto */
   margin-bottom: 1.25rem;
+  /* flex-grow: 1; ya está en Card.Body, no es necesario aquí explícitamente si Card.Body es flex */
 }
 
 .btn-project-link {
   background-color: var(--color-background-medium);
   color: white;
   border: none;
-  padding: 0.7em 1.5em;
+  padding: 0.6em 1.2em; /* Ligeramente más pequeño */
   text-decoration: none;
   border-radius: 0.25em;
   font-weight: bold;
   text-align: center;
   display: inline-block;
   transition: background-color 0.2s ease, color 0.2s ease;
+  /* align-self-center y mt-auto ya están en el JSX, lo cual es bueno */
 }
 
 .btn-project-link:hover {

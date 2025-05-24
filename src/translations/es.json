@@ -77,6 +77,10 @@
             {
                 "titulo": "Ecommerce - Librería",
                 "descripcion": "Esta es mi primer ecommerce de librería creada a partir de React.js, CSS, JavaScript y HTML."
+            },
+            {
+                "titulo": "E-APP",
+                "descripcion": "Mi propio emprendimiento como creador de aplicaciones web."
             }
         ]
     },

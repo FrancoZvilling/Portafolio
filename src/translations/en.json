@@ -77,6 +77,10 @@
             {
                 "titulo": "Ecommerce - Bookstore",
                 "descripcion": "This is my first bookstore ecommerce created with React.js, CSS, JavaScript, and HTML."
+            },
+            {
+                "titulo": "E-APP",
+                "descripcion": "My own venture as a web application developer"
             }
         ]
     },

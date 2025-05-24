@@ -28,6 +28,10 @@ function MisTrabajos() {
         {
             img: "/images/proyecto-libreria.webp",
             linkProyecto: "https://libreriaonlinezwilling.web.app/"
+        },
+        {
+            img: "/images/e-app.png",
+            linkProyecto: "https://zesty-stroopwafel-f4b35e.netlify.app/"
         }
     ];
 

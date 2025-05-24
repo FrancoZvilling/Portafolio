@@ -31,7 +31,7 @@ function MisTrabajos() {
         },
         {
             img: "/images/e-app.png",
-            linkProyecto: "https://zesty-stroopwafel-f4b35e.netlify.app/"
+            linkProyecto: "https://e-appweb.netlify.app/"
         }
     ];
 

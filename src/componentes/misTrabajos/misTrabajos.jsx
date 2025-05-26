@@ -9,29 +9,39 @@ function MisTrabajos() {
 
     // ... (tu lógica para proyectosBase y proyectosTraducidosTextos se mantiene igual) ...
      const proyectosBase = [ // Asegúrate que estos datos coinciden con los que tenías
+        
+        {
+            img: "/images/e-app.png",
+            linkProyecto: "https://e-appweb.netlify.app/"
+        },
+        {
+            img: "/images/hotel.png",
+            linkProyecto: "https://demo-hotel-eapp.netlify.app/"
+        },
+        {
+            img: "/images/tienda-ropa.png",
+            linkProyecto: "https://tiendaropa-e-app.netlify.app/"
+        },
         {
             img: "/images/library.png",
             linkProyecto: "https://libreriaonlinezwilling.netlify.app/"
-        },
-        {
-            img: "/images/cartaweb.webp",
-            linkProyecto: "https://cartawebrestaurant.netlify.app/"
-        },
-        {
-            img: "/images/cartawebdelivery.webp",
-            linkProyecto: "https://cartawebdelivery.netlify.app/"
         },
         {
             img: "/images/hp.png",
             linkProyecto: "https://test-hpotter.netlify.app/"
         },
         {
-            img: "/images/proyecto-libreria.webp",
-            linkProyecto: "https://libreriaonlinezwilling.web.app/"
+            img: "/images/cartawebdelivery.webp",
+            linkProyecto: "https://cartawebdelivery.netlify.app/"
         },
         {
-            img: "/images/e-app.png",
-            linkProyecto: "https://e-appweb.netlify.app/"
+            img: "/images/cartaweb.webp",
+            linkProyecto: "https://cartawebrestaurant.netlify.app/"
+        },
+        
+        {
+            img: "/images/proyecto-libreria.webp",
+            linkProyecto: "https://libreriaonlinezwilling.web.app/"
         }
     ];
 

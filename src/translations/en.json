@@ -59,28 +59,37 @@
         "title": "MY WORKS",
         "projects": [
             {
+                "titulo": "E-APP",
+                "descripcion": "My own venture as a web application developer"
+            },
+            {
+                "titulo": "Hotel website",
+                "descripcion": "This website was created for hotels that want to showcase their services and rooms."
+            },
+            {
+                "titulo": "Clothing store",
+                "descripcion": "Clothing e-commerce created with React.js, CSS, JavaScript, and HTML."
+            },
+            {
                 "titulo": "Ecommerce - Bookstore",
                 "descripcion": "This is my bookstore created with React.js, CSS, JavaScript, and HTML."
-            },
-            {
-                "titulo": "Web Restaurant Menu",
-                "descripcion": "Restaurant menu created with React.js, CSS, and JavaScript."
-            },
-            {
-                "titulo": "Restaurant Menu with Delivery",
-                "descripcion": "Delivery menu created with React.js, CSS, and JavaScript."
             },
             {
                 "titulo": "Harry Potter Test",
                 "descripcion": "Interactive test created with HTML, CSS, and JavaScript."
             },
             {
-                "titulo": "Ecommerce - Bookstore",
-                "descripcion": "This is my first bookstore ecommerce created with React.js, CSS, JavaScript, and HTML."
+                "titulo": "Restaurant Menu with Delivery",
+                "descripcion": "Delivery menu created with React.js, CSS, and JavaScript."
             },
             {
-                "titulo": "E-APP",
-                "descripcion": "My own venture as a web application developer"
+                "titulo": "Restaurant Menu Website",
+                "descripcion": "Restaurant menu created with React.js, CSS, and JavaScript."
+            },
+            
+            {
+                "titulo": "Ecommerce - Bookstore",
+                "descripcion": "This is my first bookstore ecommerce created with React.js, CSS, JavaScript, and HTML."
             }
         ]
     },

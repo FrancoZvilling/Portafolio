@@ -58,30 +58,41 @@
     "misTrabajos": {
         "title": "MIS TRABAJOS",
         "projects": [
+
+            {
+                "titulo": "E-APP",
+                "descripcion": "Mi propio emprendimiento como creador de aplicaciones web."
+            },
+            {
+                "titulo": "Web para hotel",
+                "descripcion": "Esta web fue creada para hoteles que quieran mostrar sus servicios y habitaciones."
+            },
+            {
+                "titulo": "Tienda de ropa",
+                "descripcion": "e-commerce de ropa creado con React.js, CSS, JavaScript y HTML."
+            },
             {
                 "titulo": "Ecommerce - Librería",
                 "descripcion": "Esta es mi librería creada a partir de React.js, CSS, JavaScript y HTML."
-            },
-            {
-                "titulo": "Carta Restaurante Web",
-                "descripcion": "Carta de restaurante creada con React.js, CSS y JavaScript."
-            },
-            {
-                "titulo": "Carta de restaurante con delivery",
-                "descripcion": "Carta de delivery creada con React.js, CSS y JavaScript."
             },
             {
                 "titulo": "Test Harry Potter",
                 "descripcion": "Test interactivo creado con HTML, CSS y JavaScript."
             },
             {
-                "titulo": "Ecommerce - Librería",
-                "descripcion": "Esta es mi primer ecommerce de librería creada a partir de React.js, CSS, JavaScript y HTML."
+                "titulo": "Carta de restaurante con delivery",
+                "descripcion": "Carta de delivery creada con React.js, CSS y JavaScript."
             },
             {
-                "titulo": "E-APP",
-                "descripcion": "Mi propio emprendimiento como creador de aplicaciones web."
+                "titulo": "Carta Restaurante Web",
+                "descripcion": "Carta de restaurante creada con React.js, CSS y JavaScript."
+            },
+            
+             {
+                "titulo": "Ecommerce - Librería",
+                "descripcion": "Esta es mi primer ecommerce de librería creada a partir de React.js, CSS, JavaScript y HTML."
             }
+            
         ]
     },
     "sobreMi": {

@@ -9,7 +9,10 @@ function MisTrabajos() {
 
     // ... (tu lógica para proyectosBase y proyectosTraducidosTextos se mantiene igual) ...
      const proyectosBase = [ // Asegúrate que estos datos coinciden con los que tenías
-        
+        {
+            img: "/images/travelx.png",
+            linkProyecto: "https://xtravelx.netlify.app/"
+        },
         {
             img: "/images/e-app.png",
             linkProyecto: "https://e-appweb.netlify.app/"

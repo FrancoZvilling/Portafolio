@@ -60,6 +60,10 @@
         "projects": [
 
             {
+                "titulo": "Agencia de Viajes",
+                "descripcion": "Aplicación web desarrollada con React y Vite, enriquecida con animaciones fluidas mediante Framer Motion. Ofrece una experiencia interactiva y visualmente atractiva para la venta de servicios turísticos, optimizando la navegación y la presentación de destinos mediante efectos dinámicos y transiciones suaves."
+            },
+            {
                 "titulo": "E-APP",
                 "descripcion": "Mi propio emprendimiento como creador de aplicaciones web."
             },

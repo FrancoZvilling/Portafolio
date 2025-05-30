@@ -59,6 +59,10 @@
         "title": "MY WORKS",
         "projects": [
             {
+                "titulo": "Travel Agency",
+                "descripcion": "Web application developed with React and Vite, enhanced with smooth animations using Framer Motion. It offers an interactive and visually appealing experience for selling travel services, optimizing navigation and destination presentation through dynamic effects and seamless transitions."
+            },
+            {
                 "titulo": "E-APP",
                 "descripcion": "My own venture as a web application developer"
             },
